@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+</head>
+<body>
+    <form action="/login" id="f1">
+        <input type="text" name="username"  />
+        <input type="password" name="password"  />
+        <!-- <input type="checkbox" name="remember_me"  checked/> -->
+        <button type="submit">提交</button>
+    </form>
+    <!-- from标签的属性：action
+        action属性用来规定当提交表单时，向何处发送表单数据
+        action属性的值应该是后端提供的一个URL地址，这个URL地址专门负责接收表单提交过来的数据
+        当form 表单在未指定 action属性值的情况下 action的默认值为当前页面的URL地址  
+        当提交表单后，页面会立即跳转到action属性指定的URL地址 - -->
+    <!-- target属性：用来规定在何处打开action URL
+            _blank:在新窗口打开
+            _self:默认，在相同的框架中打开 -->
+    <!-- method属性：用来规定以何种方式把表单数据提交到action URL 
+        两个可选值：get:默认，表示通过URL地址的形式，把表单数据提交到action URL
+                        适合用来提交少量的、简单的数据
+                    post：用得较多，适合用来提交大量的复杂的或者包含文件上传的数据-->
+    <!-- enctype属性：用来规定在发送表单数据之前如何对数据进行编码，
+            使用默认即可：application/x-www-form-urlencoded，表示发送前编码所有的字符 
+            涉及到文件上传时，必须将enctype设置为:multipart/form-data-->
+
+    
+            <!-- 监听表单提交事件   两种方法-->
+            <script>
+                $(function(){
+                    $('#f1').submit(function(e){
+                    // alert('监听到了表单的提交事件')
+                    // 当监听到表单的提交事件后，可以调用事件对象的event.preventDefault()函数，来阻止表单的提交和页面的跳转
+                    e.preventDefault();
+                    var data = $(this).serialize();
+                    console.log(data);
+                    })
+                })
+
+                // $(function(){
+                // $('#f1').on('submit',function(e){
+                    // alert('监听到了表单的提交数据')
+                    // e.preventDefault();
+
+                // })
+                // })
+        // 快速获取表单中的数据：serialize函数
+        // 在使用serialize函数快速获取表单数据时，必须为每个表单元素添加name属性
+        // $('#f1').serialize()
+        // 调用的结果
+            </script>
+</body>
+</html>

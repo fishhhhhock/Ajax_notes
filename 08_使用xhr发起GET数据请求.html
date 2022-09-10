@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.创建XHR对象
+        var xhr = new XMLHttpRequest()
+        xhr.timeout = 3000
+        xhr.ontimeout = function(){
+            console.log('请求超时了！');
+        }
+        // 2.调用open函数
+        // 使用xhr对象发起带参数的GET请求时，只需在调用xhr.open期间，为URL地址指定参数即可
+            // 在URL地址后面拼接的参数，，叫做查询字符串
+        // xhr.open('GET','http://www.liulongbin.top:3006/api/getbooks?id=1')
+        xhr.open('GET','http://www.liulongbin.top:3006/api/getbooks')
+        // 3.调用send函数
+        xhr.send()
+        // 4.监听onreadystatechange事件
+        xhr.onreadystatechange = function(){
+            // XMLHttpRequest对象的readyState属性，用来表示Ajax请求所处的状态，4表示Ajax请求完成，意味着数据传输已经彻底完成或失败
+            if(xhr.readyState === 4 && xhr.status === 200){
+                // 获取服务器响应数据
+                console.log(xhr.responseText);
+            }
+        }
+    </script>
+</body>
+</html>

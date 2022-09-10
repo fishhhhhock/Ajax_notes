@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 同源：如果两个页面的协议，域名和端口都相同，则两个页面具有相同的源 -->
+    <!-- 例子：http://www.test.com/index.html   ：协议：http   域名：www.test.com   
+            域名后面紧跟着的冒号数字就是端口，如果没有数字的话就默认为80 -->
+    <!-- 同源策略：是浏览器提供的一个安全功能 -->
+    <!-- 浏览器规定，A网站的javascript不允许和非同源的网站C之间进行资源交互：
+            无法读取cookie.localstorage\indexDB 
+            无法接触非同源网页的DOM
+            无法向非同源地址发送Ajax请求-->
+    <!--同源指的是两个URL的协议、域名】端口一致，反之就是  跨域  -->
+    <!-- 出现跨域的根本原因：浏览器的同源策略不允许非同源的URL之间进行资源的交互 -->
+    <!-- 浏览器对跨域请求的拦截：浏览器允许发起跨域请求，但是，跨域请求回来的数据，会被浏览器拦截，无法被页面获取到 -->
+    <!-- 实现跨域请求：JSONP\CORS -->
+    <!-- JSONP实现原理：通过script标签的src属性，请求跨域的数据接口，并通过函数调用的方式，接受跨域接口响应回来的数据 -->
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数据交换格式，就是服务器端与客户端之间进行数据传输与交换的格式
+        // 两种格式：XML  JSON(常用)
+        // XML:被设计用来传输和存储数据
+        // HTML:被设计用来秒数网页上的内容
+        // JSON:在计算机与网络之间存储和传输数据
+        // JSON:是javascript对象和数组的字符串表示法，它使用文本表示一个JS对象或数组信息，
+        // JSON的本质是字符串，轻量级的文本数据交换格式
+        // JSON的两种结构:
+            // 1.对象结构：表示为{}括起来的内容。数据结构为{keey:value,key:value}
+            // key必须是用英文双引号包裹起来的字符串，value的数据类型可以是数字、字符串、布尔值、null\数组、对象
+            // 2.数组结构：表示为[]括起来的内容，数组中数据的类型可以是数字、字符串、布尔值、null\数组、对象
+        // JSON语法注意事项:
+            // 1.属性名必须使用双引号包裹
+            // 2.字符串类型的值必须使用双引号包
+            // 3.JSON中不允许使用单引号表示字符串
+            // 4.JSON中不能写注释
+            // 5.JSON的最外层必须是对象或数组格式
+            // 6.不能使用undefined或函数作为JSON的值
+            
+            // JSON.parse():实现从JSON字符串转换成JS对象
+            // JSON.stringify():实现从JS对象转换为JSON字符串
+            var jsonstr = '{"a":"Hello","b":"world"}'
+            var obj = JSON.parse(jsonstr)
+            console.log(obj);
+
+            // 序列化：把数据对象转化为字符串的过程（JSON.stringify()
+            // 反序列化：把字符串转换为数据对象的过程
+    </script>
+</body>
+</html>
